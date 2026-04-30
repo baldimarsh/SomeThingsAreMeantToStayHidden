@@ -3,18 +3,41 @@
 	<Style>
 		body{
 			background-color:black;
+			margin:0;
+			min-height: 100vh;
+			display:flex;
+			justify-content:center;
+			align-items: center;
 		}
+		.container{
+			display:flex;
+			flex-direction:column;
+			align-items: center;
+			gap:20px;
 		#BTN{
 			Font-family: 'Eater',cursive;
 			font-size:6rem;
 			color: red;
 			text-shadow: 10px 10px 20px #bb0000;
 			background-color : black;
+			border:none;
+			cursor:pointer;
+		}
 	</style>
 </head>
 <body>
-	<img src="Web page/Him.PNG">
-	<button ID="BTN">
-		START
-	</button>
+	<div class="container">
+		<img src="Web page/Him.PNG">
+		<button ID="BTN">
+			START
+		</button>
+	</div>
+	<audio id="creepymusic" loop>
+			<source src="CreepyMusic.mp3" type="audio/mpeg">
+	</audio>
+	<script>
+		document.getElementById("BTN").addEventListener("click",() =>{
+			document.getElementById("creepymusic").play();
+		});
+	</script>
 </body>
