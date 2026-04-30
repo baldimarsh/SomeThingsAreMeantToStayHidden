@@ -1,0 +1,60 @@
+GitHub has now been set up on Zizi's computer - but if you want to set it up on another computer, you'll want to install the following two programs:
+
+git
+github cli
+
+Find them by googling "download XXXX" where XXXX is the name of the program you want to download.
+
+There are 4 things that are important for you to know how to do right now. 
+
+1) Navigate to the right folder using the command line (if you don't have a folder yet on a new computer, make one, and call it the same thing "some things are meant to stay hidden"
+
+This command lists all the sub folders from where you are now:
+>>> ls					
+
+This command changes your directory to the folder XXXX (you only need the "" if there are spaces in the name):
+>>> cd "XXXX"
+
+This command go to the parent directory of the folder you're in:
+>>> cd ..
+
+
+2) Connect to the online repo from a new computer
+
+First, log in to GitHub from the command line. This only needs doing once per computer:
+>>> gh auth login
+
+Follow the prompts - it will open a browser window for you to log in.
+
+Then tell git where your online repo lives:
+>>> git init
+>>> git remote add origin https://github.com/baldimarsh/SomeThingsAreMeantToStayHidden.git
+
+
+3) Download what's on the online repo right now
+
+This command pulls down anything on the online repo that isn't on your computer yet. It's good to do this before you start working each time:
+>>> git pull origin main
+
+
+4) Put what you've done onto the online repo
+
+This command adds everything in the folder that has changed to your next commit:
+>>> git add .
+This command commits what you've added:
+>>> git commit -m "This bit should describe what you've done since last time"
+This command pushes your commit up to the online repo:
+>>> git push
+
+The first time you push on a new computer, you might need this instead:
+>>> git push -u origin main
+
+
+Other things you might want to learn how to do at some point - ask me and we can add them to this walkthrough:
+
+- Look at the history of what's been committed
+- Undo a commit you didn't mean to make
+- See what's changed since your last commit
+- Work on a separate "branch" so you can experiment without breaking the main thing
+- What to do if two versions of the same file clash (a "merge conflict")
+- Set up a new repo for a different project you want to keep safe like this one
