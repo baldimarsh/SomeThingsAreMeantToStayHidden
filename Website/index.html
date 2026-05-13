@@ -14,6 +14,7 @@
 			flex-direction:column;
 			align-items: center;
 			gap:20px;
+		}
 		#BTN{
 			Font-family: 'Eater',cursive;
 			font-size:6rem;
@@ -23,6 +24,16 @@
 			border:none;
 			cursor:pointer;
 		}
+        .word {
+            Font-family: 'Open Sans',cursive;
+            font-size: 1.3rem;
+            color: #bd1111;
+            opacity: 0;
+			transition:opacity 1.1s ease;
+			display:inline-block;
+			margin:0 4px;
+        }
+		.word.visible{opacity:1;}
 	</style>
 </head>
 <body>
@@ -31,13 +42,19 @@
 		<button ID="BTN">
 			START
 		</button>
+		<p id="Narration"></p>
+
 	</div>
 	<audio id="creepymusic" loop>
 			<source src="CreepyMusic.mp3" type="audio/mpeg">
 	</audio>
 	<script>
+		const lines = ["bananas","in pajamas"]
+		const words = lines.join(" ").split(" ");
 		document.getElementById("BTN").addEventListener("click",() =>{
 			document.getElementById("creepymusic").play();
+			words.forEach(
+				w=>(const s=document.createElement("span");
 		});
 	</script>
 </body>
