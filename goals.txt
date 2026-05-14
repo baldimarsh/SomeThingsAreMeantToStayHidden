@@ -3,3 +3,4 @@
 3) maybe make it a bit scarier than "bananas in pajamas" 
 4) make everything else fade out, before the words start to appear
 5) plan out following scene with creach
+6) import open sans like we did eater
