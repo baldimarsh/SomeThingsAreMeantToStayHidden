@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <Head>
 	<Link href="https://fonts.googleapis.com/css2?family=Eater&display=swap" rel="stylesheet">
 	<Style>
@@ -51,10 +52,18 @@
 	<script>
 		const lines = ["bananas","in pajamas"]
 		const words = lines.join(" ").split(" ");
+		let i = 0;
 		document.getElementById("BTN").addEventListener("click",() =>{
 			document.getElementById("creepymusic").play();
 			words.forEach(
-				w=>(const s=document.createElement("span");
+				w=>{const s=document.createElement("span");
+				s.className = "word";
+				s.textContent = w;
+				document.getElementById("Narration").appendChild(s);
+			});
+			setInterval(()=>{
+				if(i<words.legth)document.querySelectorAll(".word")[i++].classList.add("visible");
+			},500);
 		});
 	</script>
 </body>
